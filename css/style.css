@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap');
+
+body {
+    height: 100vh;
+    background: no-repeat linear-gradient(120deg, pink, rgb(163, 94, 163), rgb(255, 92, 92));
+    animation: bg 20s infinite alternate-reverse;
+    background-size: 800%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comfortaa', cursive;
+    font-size: 10px;
+
+}
+
+@keyframes bg {
+    0% {
+        background-position: left top;
+    }
+
+    100% {
+        background-position: right bottom;
+    }
+}
+
+.box {
+    width: 100%;
+    max-width: 600px;
+    padding: 4vh 1vh;
+    border-radius: 10px;
+    box-shadow: 0 0 16px white;
+    background-color: white;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+h1 {
+    font-size: 6vh;
+    text-align: center;
+}
+
+.box__manager {
+    display: flex;
+}
+
+input {
+    border: 1px solid rgb(163, 94, 163);
+    border-radius: 10px 0 0 10px;
+    flex-grow: 1;
+    padding: 1vh;
+    font-size: 2vh;
+    height: 5vh;
+    transition: 0.4s;
+}
+
+input:focus {
+    box-shadow: 0 0 12px rgb(163, 94, 163);
+}
+
+.button__finger {
+    width: 5vh;
+    height: 5vh;
+    background-color: rgb(163, 94, 163);
+    color: white;
+    border-radius: 0 10px 10px 0;
+    font-size: 3vh;
+    transition: 0.4s;
+    border: 1px solid rgb(163, 94, 163);
+    border-left: none;
+}
+
+button:hover {
+    color: rgb(163, 94, 163);
+    background-color: white;
+
+}
+
+ul {
+    border: 1px solid rgb(163, 94, 163);
+    border-right: none;
+    border-radius: 10px;
+    padding: 0.2vh 4px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    overflow-y: auto;
+    flex-grow: 1;
+    min-height: 100px;
+}
+
+ul::-webkit-scrollbar{
+    width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb{
+    background-color: rgb(163, 94, 163);
+    border-radius: 50px;
+}
+
+li {
+    border: 1px solid transparent;
+    transition: 0.4s;
+    padding: 0.6vh 4px;
+    border-radius: 6px;
+    font-size: 1.6em;
+    display: flex;
+    gap: 0.5em;
+
+}
+
+li:nth-child(even) {
+    background-color: rgba(163, 94, 163, 0.284);
+}
+
+li:hover {
+    border: 1px solid rgb(163, 94, 163);
+    cursor: pointer;
+}
+
+i {
+    transition: 0.4s;
+    margin: 0 4px;
+    font-size: 2vh;
+}
+
+i:hover {
+    cursor: pointer;
+    color: rgb(163, 94, 163);
+    transition: 0.4s;
+}
+
+p {
+    font-size: 18px;
+    display: inline-block;
+}
+
+.orders {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+}
+
+.button__orders {
+    background-color: rgb(163, 94, 163);
+    color: white;
+    padding: 10px 10px;
+    font-size: 2vh;
+    border-radius: 10px;
+    transition: 0.4s;
+    border: 1px solid rgb(163, 94, 163);
+    width: 45%;
+}
+
+li.check{
+    opacity: 0.5;
+    
+}
+
+li.check p{
+    text-decoration: line-through;
+}
