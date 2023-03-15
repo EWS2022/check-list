@@ -1,6 +1,8 @@
 let buttonNewOrders = document.querySelector('.button__finger');
 let inputTextOrder = document.querySelector('input');
-let audio = document.querySelector('audio');
+let audioNo = document.querySelector('.no');
+let audioPaper = document.querySelector('.paper');
+let audioPencil = document.querySelector('.pencil');
 let ul = document.querySelector('ul');
 let buttonCheckAll = document.querySelector('.button__check');
 let buttonRemoveAll = document.querySelector('.button__remove');
@@ -14,7 +16,7 @@ buttonNewOrders.onclick = function () {
     if (inputTextOrder.value != '') {
         addOrder();
     } else {
-        audio.play();
+        audioNo.play();
         setTimeout(() => {
             alert('Ecrivez quelque chose dans le champ de saisie');
         }, 100);
@@ -25,7 +27,7 @@ inputTextOrder.onkeydown = function (e) {
         if (inputTextOrder.value != '') {
             addOrder();
         } else {
-            audio.play();
+            audioNo.play();
             setTimeout(() => {
                 alert('Ecrivez quelque chose dans le champ de saisie');
             }, 100);
@@ -39,11 +41,13 @@ ul.onclick = function (e) {//quand on appuie sur ul une fonction demarre (e est 
         if (target.classList.contains('fa-trash-can')) {//si ce li a comme class fa-trash-can
             target.parentElement.remove();//alors on supprime l'element avec son parent c'est-a-dire avec le tag li
             localStorage.setItem('checkList', ul.innerHTML);
+            audioPaper.play()
         }
 
         if (target.classList.contains('fa-circle-check')) {
             target.parentElement.classList.toggle('check');
             localStorage.setItem('checkList', ul.innerHTML);
+            audioPencil.play()
         }
     }
 }
@@ -69,6 +73,7 @@ buttonCheckAll.onclick = function () {
     for (let i = 0; i < allLi.length; i++) {
         allLi[i].classList.add('check')
     }
+    audioPencil.play()
     localStorage.setItem('checkList', ul.innerHTML);
 }
 
@@ -77,5 +82,6 @@ buttonRemoveAll.onclick = function () {
     for (let i = 0; i < allLi.length; i++) {
         allLi[i].remove();
     }
+    audioPaper.play()
     localStorage.setItem('checkList', ul.innerHTML);
 }
