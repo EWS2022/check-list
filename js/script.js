@@ -6,6 +6,7 @@ let audioPencil = document.querySelector('.pencil');
 let ul = document.querySelector('ul');
 let buttonCheckAll = document.querySelector('.button__check');
 let buttonRemoveAll = document.querySelector('.button__remove');
+let envoyé = document.querySelector('.envoyé');
 
 ul.innerHTML = localStorage.getItem('checkList');
 
@@ -19,7 +20,7 @@ buttonNewOrders.onclick = function () {
         audioNo.play();
         setTimeout(() => {
             alert('Ecrivez quelque chose dans le champ de saisie');
-        }, 100);
+        }, 100); 
     }
 }
 inputTextOrder.onkeydown = function (e) {
@@ -64,6 +65,7 @@ function addOrder() {
     li.appendChild(iCheck);
     li.appendChild(p);
     ul.prepend(li);
+    envoyé.play();
     inputTextOrder.value = '';
     localStorage.setItem('checkList', ul.innerHTML);
 }
